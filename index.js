@@ -1,29 +1,21 @@
 import { megjelenit } from "./kartya.js"
 import Kutya from "./Kutya.js"
+import { KUTYALISTA } from "./adat.js"
 
-const kutya = {
-    kep:"kutya.png",
-    nev:"Morzsi",
-    oltott:true
-}
+import Kutyak from "./Kutyak.js"
+
 
 const szuloELEM=document.querySelector(".tarolo")
+const kedvencElEM=document.querySelector(".kedvenc")
 
 
+new Kutyak(KUTYALISTA,szuloELEM)
 
-const dog =new Kutya(kutya,szuloELEM)
-console.log(dog)
-//dog.megjelenit()
-console.log(dog.szuloELEM)
-console.log(dog.obj)
-console.log(dog.getObj())
 
-const kutya2={
-    kep:"szemes.jpg",
-    nev:"szemes"
+const KEDVENCLISTA=[]
 
-}
-
-const dog2=new Kutya(kutya2,szuloELEM)
-
-dog2.setObj("oltott")
+window.addEventListener("kedvenc",function(event){
+    console.log(event.detail)
+    KEDVENCLISTA.push(event.detail)
+    new Kutyak(KEDVENCLISTA,kedvencElEM)
+})

@@ -5,3 +5,13 @@ img {
     width: 300px;
     border: 1px solid gray;
 }
+
+.tarolo {
+    display:flex;
+    flex-wrap:wrap;
+
+}
+.kedvenc{
+    border:1px solid red;
+    
+}
